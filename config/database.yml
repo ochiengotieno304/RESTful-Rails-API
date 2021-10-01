@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: rest_api_development
-  username: ochi
-  password: '12345678'
+  username: <%= Rails.application.credentials.api_db[:username] %>
+  password: <%= Rails.application.credentials.api_db[:password] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
